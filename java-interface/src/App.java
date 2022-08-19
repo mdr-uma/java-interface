@@ -21,12 +21,38 @@ class Pig implements Animal {
 	}
 }
 
+//Multiple interface:
+
+interface FirstInterface {
+	public void myMethod(); // interface method
+}
+
+interface SecondInterface {
+	public void myOtherMethod(); // interface method
+}
+
+class DemoClass implements FirstInterface, SecondInterface {
+	public void myMethod() {
+	   System.out.println("Some text..");
+	}
+	
+	public void myOtherMethod() {
+	   System.out.println("Some other text...");
+	}
+}
 
 public class App {
 	public static void main(String[] args) {
 		Pig myPig = new Pig();  // Create a Pig object
 	    myPig.animalSound();
 	    myPig.sleep();
+	    
+	    DemoClass myObj = new DemoClass();
+	    myObj.myMethod();
+	    myObj.myOtherMethod();
 
 	}
 }
+
+
+
